@@ -1,1 +1,0 @@
-1、引入svg-sprite-loader，用于生成svg
