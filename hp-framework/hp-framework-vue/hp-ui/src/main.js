@@ -13,6 +13,7 @@ import store from './store'
 import router from './router'
 
 import './assets/icons' // icon组件全局注册
+import './permission'
 
 Vue.config.productionTip = false
 

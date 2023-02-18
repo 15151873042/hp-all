@@ -1,7 +1,11 @@
 import axios from 'axios'
+import store from '@/store'
 import {getToken} from "@/utils/auth";
 import errorCode from "@/utils/errorCode";
-import {Message} from "element-ui";
+import {Message, MessageBox} from "element-ui";
+
+// 是否显示重新登录
+export let isRelogin = { show: false };
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
@@ -42,7 +46,20 @@ service.interceptors.response.use(res => {
     }
 
     if (code === 401) {
-
+        if (!isRelogin.show) {
+            MessageBox.confirm('登录状态已过期，您可以继续留在该页面，或者重新登录', '系统提示', {
+                confirmButtonText: '重新登录',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                store.dispatch('LogOut').then(() => {
+                    location.href = '/login'; // 地址栏刷新去登录页，vuex中的数据会被清空
+                })
+            }).catch(() => {
+                isRelogin.show = false;
+            })
+        }
+        return Promise.reject('无效的会话，或者会话已过期，请重新登录。')
     } else if (code === 500) {
         Message({
             message: msg,
@@ -54,7 +71,8 @@ service.interceptors.response.use(res => {
             title: msg
         })
         return Promise.reject('error')
-    } else {
+    }
+    else {
       return res.data
     }
 }, error => {

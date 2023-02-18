@@ -1,4 +1,24 @@
+// 判断对象是否为空
 
+export function isBlank(obj) {
+  return obj === undefined || obj === null || obj === ''
+}
+
+// 判断对象是否不为空
+export function isNotBlank(obj) {
+  return obj !== undefined && obj !== null && obj !== ''
+}
+
+// 判断数组是否不为空
+export function isEmpty(array) {
+  return array == undefined || array == null || array.length == 0
+}
+
+
+// 判断数组是否不为空
+export function isNotEmpty(array) {
+  return array !== undefined && array !== null && array.length > 0
+}
 
 /**
  * 通用js方法封装处理
