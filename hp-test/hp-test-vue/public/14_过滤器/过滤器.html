@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>过滤器</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/dayjs.min.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h3>现在是：{{time | timeFormater}}</h3>
+
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    Vue.config.productionTip = false
+
+    new Vue({
+      el: '#root',
+      data: {
+        time:1621561377603, //时间戳
+        msg:'你好'
+      },
+
+      // 局部过滤器
+      filters: {
+        timeFormater(value, str='YYYY年MM月DD日 HH:mm:ss') {
+          return dayjs(value).format(str)
+        }
+      }
+    })
+  </script>
+</html>
