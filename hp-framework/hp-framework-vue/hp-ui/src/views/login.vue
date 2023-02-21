@@ -66,10 +66,19 @@
 import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from '@/utils/jsencrypt'
-import store from "@/store";
 
 export default {
   name: "Login",
+
+  watch: {
+    $route: {
+      immediate: true,
+      handler: function(route) {
+        this.redirect = route.query && route.query.redirect;
+      },
+    }
+  },
+
   data() {
     return {
       codeUrl: "",

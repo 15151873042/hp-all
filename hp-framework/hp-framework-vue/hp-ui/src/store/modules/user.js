@@ -55,8 +55,6 @@ const user = {
           if (isNotEmpty(res.roles)) {
             commit('SET_ROLES', res.roles)
             commit('SET_PERMISSIONS', res.permissions)
-          }else {
-
           }
           commit('SET_NAME', user.userName)
           commit('SET_AVATAR', avatar)

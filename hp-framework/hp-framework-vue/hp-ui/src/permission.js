@@ -13,8 +13,6 @@ const whiteList = ['/login', '/auth-redirect', '/bind', '/register']
 // FIXME next()执行之后方法不会结束，如果需要结束需要return
 // FIXME 路由中next()有值好像就是重定向
 router.beforeEach((to, from, next) => {
-  console.log('from', from)
-  console.log('to', to)
   NProgress.start()
 
   // 判断是否可以从cookie获取jwt toke

@@ -6,7 +6,9 @@ import {constantRoutes} from "@/router";
 
 const permission = {
   state: {
-    sidebarRouters: [] // 侧边栏逐层嵌套菜单树
+    routes: [], // 用户对应的权限路由
+    sidebarRouters: [],  // 侧边栏逐层嵌套菜单树
+    topbarRouters: [], // 顶部导航栏路由
   },
 
   mutations: {
