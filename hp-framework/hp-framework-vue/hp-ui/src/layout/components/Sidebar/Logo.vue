@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      title: '胡鹏管理系统',
+      title: 'XXX管理系统',
       logo: logoImg
     }
   }

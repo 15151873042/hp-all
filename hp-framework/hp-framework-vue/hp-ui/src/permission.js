@@ -34,6 +34,7 @@ router.beforeEach((to, from, next) => {
         store.dispatch('GetInfo').then(() => {
           isRelogin.show = false
           store.dispatch('GenerateRoutes').then((accessRoutes) => {
+            router.addRoutes(accessRoutes)
             next({...to})
           })
         }).catch((err) => { // 如果获取用户信息失败，可能是token过期了
