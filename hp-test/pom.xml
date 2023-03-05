@@ -14,6 +14,7 @@
     <modules>
         <module>hp-test-spring-transaction</module>
         <module>hp-test-spring-aop</module>
+        <module>hp-test-spring-security</module>
     </modules>
 
 
