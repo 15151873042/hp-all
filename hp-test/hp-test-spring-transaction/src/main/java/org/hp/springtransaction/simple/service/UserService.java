@@ -5,5 +5,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserService {
 
     @Transactional
-    void updateVersion();
+    void updateVersion() throws Exception;
 }

@@ -5,7 +5,7 @@ import org.hp.springtransaction.simple.service.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class SimpleConfig {
 
     @Bean

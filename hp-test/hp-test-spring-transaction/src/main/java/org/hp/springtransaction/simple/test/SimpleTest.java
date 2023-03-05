@@ -13,7 +13,7 @@ public class SimpleTest {
     private UserService userService;
 
     @Test
-    public void test() {
+    public void test() throws Exception {
         userService.updateVersion();
     }
 }

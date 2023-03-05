@@ -12,7 +12,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class DoubleDataSourceConfig {
 
     @Bean
