@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>abc</p>
+    <span>张</span>
   </div>
 </template>
 
