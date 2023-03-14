@@ -16,6 +16,7 @@
         <module>hp-test-spring-aop</module>
         <module>hp-test-spring-security</module>
         <module>hp-test-docker</module>
+        <module>hp-test-thymeleaf</module>
     </modules>
 
 
